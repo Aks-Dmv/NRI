@@ -8,7 +8,7 @@ from torch.autograd import Variable
 
 def my_softmax(input, axis=1):
     trans_input = input.transpose(axis, 0).contiguous()
-    soft_max_1d = F.softmax(trans_input)
+    soft_max_1d = F.softmax(trans_input, dim=0)
     return soft_max_1d.transpose(axis, 0)
 
 
